@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+:root {
+  --background: 0 0% 100%;
+  --foreground: 270 8% 15%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 270 8% 15%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 270 8% 15%;
+
+  /* 🟢 Màu chủ đạo Phúc Long */
+  --primary: 106 67% 25%;             /* #236513 */
+  --primary-foreground: 0 0% 100%;
+  --primary-light: 106 45% 35%;       /* xanh nhạt hơn một chút */
+  --primary-dark: 106 80% 15%;        /* xanh đậm hơn */
+  
+  --secondary: 120 16% 96%;           /* nền xám ngả xanh nhẹ */
+  --secondary-foreground: 270 8% 15%;
+
+  --muted: 120 10% 95%;
+  --muted-foreground: 270 8% 46%;
+
+  /* 🌼 Màu vàng điểm nhấn (accent) */
+  --accent: 45 95% 58%;               /* vàng chanh nhẹ */
+  --accent-foreground: 0 0% 100%;
+
+  /* ✅ Trạng thái thành công đồng bộ primary */
+  --success: 106 67% 25%;
+  --success-foreground: 0 0% 100%;
+
+  /* ❌ Trạng thái lỗi giữ nguyên đỏ */
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 120 10% 90%;
+  --input: 120 10% 90%;
+  --ring: 106 67% 25%;
+
+  --radius: 1rem;
+
+  /* 🌈 Premium gradients (theo tông xanh Phúc Long) */
+  --gradient-primary: linear-gradient(135deg, hsl(106 67% 25%), hsl(106 45% 35%));
+  --gradient-accent: linear-gradient(135deg, hsl(106 95% 58%), hsl(50 96% 65%));
+  --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(120 20% 98%));
+  
+  /* ☁️ Shadows tinh tế hơn (xanh lá thay tím) */
+  --shadow-soft: 0 2px 8px -2px hsl(106 67% 25% / 0.1);
+  --shadow-medium: 0 4px 16px -4px hsl(106 67% 25% / 0.15);
+  --shadow-strong: 0 8px 24px -8px hsl(106 67% 25% / 0.2);
+  --shadow-accent: 0 4px 16px -4px hsl(45 95% 58% / 0.25);
+
+  /* 🌀 Animations giữ nguyên */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+
+  .dark {
+    --background: 270 30% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 270 25% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 270 25% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 266 83% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 270 20% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 270 20% 18%;
+    --muted-foreground: 270 8% 70%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 270 20% 20%;
+    --input: 270 20% 20%;
+    --ring: 266 83% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
