@@ -40,7 +40,7 @@ export default function MainLayout() {
               <div className="flex items-center gap-2">
                 <Coffee className="w-5 h-5 text-primary" />
                 <h1 className="text-lg font-semibold text-foreground">
-                  Phúc Long Coffee & Tea
+                  Aurum Coffee & Tea
                 </h1>
               </div>
             </div>

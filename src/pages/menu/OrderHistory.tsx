@@ -94,7 +94,7 @@ export default function OrderHistory() {
               Bạn chưa có đơn hàng nào
             </h2>
             <p className="text-muted-foreground mb-6">
-              Hãy đặt đơn hàng đầu tiên để trải nghiệm hương vị Phúc Long ☕
+              Hãy đặt đơn hàng đầu tiên để trải nghiệm hương vị Aurum ☕
             </p>
             <Button
               onClick={() => navigate("/menu")}

@@ -3,13 +3,10 @@ import { Search } from "lucide-react";
 import { Input } from "@/components/profile-ui/input";
 import { CategoryFilter } from "@/components/CategoryFilter";
 import { ProductCard } from "@/components/ProductCard";
-import ProductModal from "@/components/ProductModal";
 import { CartSummary } from "@/components/CartSummary";
 import { useCart } from "@/contexts/CartContext";
-import { Badge } from "@/components/profile-ui/badge";
 import { useNavigate } from "react-router-dom";
-import React from "react";
-import { ProductService } from "@/lib/menu/productService"; // ✅ thêm import
+import { ProductService } from "@/lib/menu/productService";
 
 export default function Menu() {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -18,7 +15,20 @@ export default function Menu() {
   const navigate = useNavigate();
   const [products, setProducts] = useState<any[]>([]);
 
-  // ✅ Lấy dữ liệu thật từ backend thay mock
+  // ==========================================
+  // ÁNH XẠ CATEGORYNAME → CATEGORYID (FE tự xử lý)
+  // ==========================================
+  const CategoryMap: Record<string, string> = {
+    "Cà phê": "3",
+    "Trà": "19",
+    "Sinh tố": "20",
+    "Bánh": "21",
+    "Đồ ăn nhẹ": "22",
+  };
+
+  // ==========================================
+  // Lấy dữ liệu sản phẩm từ backend
+  // ==========================================
   useEffect(() => {
     (async () => {
       try {
@@ -30,16 +40,25 @@ export default function Menu() {
     })();
   }, []);
 
-  // ✅ Giữ nguyên logic lọc
+  // ==========================================
+  // Filter product theo CategoryID thật
+  // ==========================================
   const filteredProducts = products.filter((product) => {
+    const productCatId = CategoryMap[product.CategoryName] || null;
+
     const matchesCategory =
-      selectedCategory === "all" ||
-      product.CategoryName?.toLowerCase() === selectedCategory.toLowerCase();
-    const matchesSearch = product.Name?.toLowerCase().includes(searchQuery.toLowerCase());
+      selectedCategory === "all" || productCatId === selectedCategory;
+
+    const matchesSearch = product.Name?.toLowerCase().includes(
+      searchQuery.toLowerCase()
+    );
+
     return matchesCategory && matchesSearch;
   });
 
-  // ✅ Sửa navigate
+  // ==========================================
+  // Navigate tới trang chi tiết sản phẩm
+  // ==========================================
   const handleProductClick = (product: any) => {
     navigate(`/menu/product/${product.Id}`);
   };
@@ -74,7 +93,10 @@ export default function Menu() {
             {/* Categories */}
             <div className="mb-8">
               <h3 className="text-lg font-semibold mb-4 text-foreground">Danh mục</h3>
-              <CategoryFilter selected={selectedCategory} onSelect={setSelectedCategory} />
+              <CategoryFilter
+                selected={selectedCategory}
+                onSelect={(val) => setSelectedCategory(val)}
+              />
             </div>
 
             {/* Products Grid */}
@@ -85,15 +107,19 @@ export default function Menu() {
                   {filteredProducts.length} sản phẩm
                 </span>
               </div>
+
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredProducts.map((product) => (
                   <ProductCard
-                    key={product.ProductID}
-                    id={product.ProductID}
+                    key={product.Id}
+                    id={product.Id}
                     name={product.Name}
                     price={product.Price}
-                    image={product.Image || "https://placehold.co/500x500?text=No+Image"}
-                    rating={product.Rating || 5}
+                    image={
+                      product.ImageUrl ||
+                      "https://placehold.co/500x500?text=No+Image"
+                    }
+                    rating={product.AverageRating || 5}
                     category={product.CategoryName}
                     onAddToCart={() => handleProductClick(product)}
                   />
@@ -102,7 +128,7 @@ export default function Menu() {
             </div>
           </div>
 
-          {/* Cart Summary Sidebar */}
+          {/* Cart Sidebar */}
           <div className="hidden lg:block w-[350px]">
             <CartSummary />
           </div>

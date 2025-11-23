@@ -43,14 +43,13 @@ export const CategoryFilter = ({ selected, onSelect }: CategoryFilterProps) => {
         setCategories((prev) => [...prev, ...dynamic]);
       } catch (err) {
         console.error("❌ Lỗi tải danh mục:", err);
-        // fallback tĩnh nếu API lỗi
         setCategories([
           { id: "all", name: "Tất cả", icon: UtensilsCrossed },
-          { id: "coffee", name: "Cà phê", icon: Coffee },
-          { id: "tea", name: "Trà", icon: Wine },
-          { id: "smoothie", name: "Sinh tố", icon: IceCream },
-          { id: "cake", name: "Bánh", icon: Cake },
-          { id: "snack", name: "Đồ ăn nhẹ", icon: Salad },
+          { id: "3", name: "Cà phê", icon: Coffee },
+          { id: "19", name: "Trà", icon: Wine },
+          { id: "20", name: "Sinh tố", icon: IceCream },
+          { id: "21", name: "Bánh", icon: Cake },
+          { id: "22", name: "Đồ ăn nhẹ", icon: Salad },
         ]);
       }
     })();

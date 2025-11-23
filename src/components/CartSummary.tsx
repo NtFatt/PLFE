@@ -7,6 +7,8 @@ import { useNavigate } from 'react-router-dom';
 export const CartSummary = () => {
   const { items, removeItem, subtotal, totalItems } = useCart();
   const navigate = useNavigate();
+  const formatVND = (value: number) =>
+    value.toLocaleString("vi-VN", { style: "currency", currency: "VND" });
 
   if (totalItems === 0) {
     return (
@@ -23,7 +25,7 @@ export const CartSummary = () => {
     );
   }
 
-  const serviceFee = 1.0;
+  const serviceFee = 10000;
   const total = subtotal + serviceFee;
 
   return (
@@ -60,14 +62,14 @@ export const CartSummary = () => {
                   </p>
                 )}
                 <p className="text-sm font-bold text-primary mt-1">
-                  ${(item.price * item.quantity).toFixed(2)}
+                  {formatVND(item.price * item.quantity)}
                 </p>
               </div>
               <Button
                 size="icon"
                 variant="ghost"
                 onClick={() => removeItem(item.id)}
-                className="opacity-0 group-hover:opacity-100 transition-opacity rounded-lg"
+                className="opacity-0 group-hover:opa  city-100 transition-opacity rounded-lg"
               >
                 <Trash2 className="w-4 h-4 text-destructive" />
               </Button>
@@ -79,15 +81,16 @@ export const CartSummary = () => {
       <div className="space-y-3 mb-6 pt-4 border-t">
         <div className="flex justify-between text-sm">
           <span className="text-muted-foreground">Tạm tính</span>
-          <span className="font-semibold">${subtotal.toFixed(2)}</span>
+          <span className="font-semibold">{formatVND(subtotal)}
+          </span>
         </div>
         <div className="flex justify-between text-sm">
           <span className="text-muted-foreground">Phí dịch vụ</span>
-          <span className="font-semibold">+${serviceFee.toFixed(2)}</span>
+          <span className="font-semibold">+{formatVND(serviceFee)}</span>
         </div>
         <div className="flex justify-between text-lg font-bold pt-3 border-t">
           <span>Tổng cộng</span>
-          <span className="text-primary">${total.toFixed(2)}</span>
+          <span className="text-primary">{formatVND(total)}</span>
         </div>
       </div>
 

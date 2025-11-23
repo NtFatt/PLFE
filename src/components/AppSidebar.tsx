@@ -45,7 +45,7 @@ export function AppSidebar() {
         <div className="p-6 border-b border-white/20">
           {!isCollapsed ? (
             <div>
-              <h2 className="text-xl font-bold">Phúc Long</h2>
+              <h2 className="text-xl font-bold">Aurum</h2>
               <p className="text-sm opacity-80">Coffee & Tea</p>
             </div>
           ) : (

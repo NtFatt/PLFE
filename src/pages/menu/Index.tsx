@@ -402,7 +402,7 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
             <h2 className="text-2xl font-bold text-foreground mb-2">Tin tức & Khuyến mãi</h2>
-            <p className="text-muted-foreground">Tin tức & Khuyến mãi của Phúc Long</p>
+            <p className="text-muted-foreground">Tin tức & Khuyến mãi của Aurum</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {newsItems.map((item) => (
@@ -437,7 +437,7 @@ export default function Index() {
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <h3 className="text-xl font-bold mb-4 text-card-foreground">
-                Phúc Long Coffee & Tea
+                Aurum Coffee & Tea
               </h3>
               <p className="text-muted-foreground">
                 Mang đến trải nghiệm cà phê và trà tuyệt vời cho mọi người
@@ -468,7 +468,7 @@ export default function Index() {
             </div>
           </div>
           <div className="mt-8 pt-8 border-t text-center text-muted-foreground">
-            <p>© 2025 Phúc Long Coffee & Tea. All rights reserved.</p>
+            <p>© 2025 Aurum Coffee & Tea. All rights reserved.</p>
           </div>
         </div>
       </footer>

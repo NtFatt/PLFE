@@ -10,7 +10,7 @@ const Index = () => {
           <Coffee className="w-10 h-10 text-primary-foreground" />
         </div>
         <h1 className="mb-4 text-5xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-          Phúc Long Coffee & Tea
+          Aurum Coffee & Tea
         </h1>
         <p className="text-xl text-muted-foreground mb-8">
           Hương vị truyền thống, trải nghiệm hiện đại

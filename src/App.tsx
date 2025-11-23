@@ -1,5 +1,5 @@
 // =============================================================
-// 🌐 ROUTER APP - PHÚC LONG COFFEE & TEA
+// 🌐 ROUTER APP - Aurum COFFEE & TEA
 // -------------------------------------------------------------
 // ✅ Tích hợp ProtectedRoute (tự refresh token khi hết hạn)
 // ✅ Không logout khi điều hướng nội bộ /profile/*

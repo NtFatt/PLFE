@@ -12,7 +12,7 @@ const Index = () => {
           <Coffee className="w-20 h-20 text-white" />
         </div>
         <h1 className="mb-4 text-5xl font-bold text-white drop-shadow-lg">
-          Phúc Long Coffee & Tea
+          Aurum Coffee & Tea
         </h1>
         <p className="text-xl text-white/90 mb-8 drop-shadow">
           Hệ thống quản lý người dùng và đơn hàng

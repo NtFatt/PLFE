@@ -93,7 +93,7 @@ const Promotions = () => {
               Tin Tức
             </h1>
             <p className="text-lg opacity-90">
-              Cập nhật tin tức mới nhất từ Phúc Long
+              Cập nhật tin tức mới nhất từ Aurum
             </p>
           </div>
         </div>
@@ -101,7 +101,7 @@ const Promotions = () => {
         {/* Breadcrumb */}
         <div className="container mx-auto px-4 py-4">
           <nav className="flex items-center space-x-2 text-sm text-muted-foreground">
-            <a href="/" className="hover:text-primary transition-colors">Phúc Long</a>
+            <a href="/" className="hover:text-primary transition-colors">Aurum</a>
             <span>›</span>
             <span className="text-foreground">Tin tức</span>
           </nav>

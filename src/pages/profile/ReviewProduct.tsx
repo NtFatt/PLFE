@@ -157,12 +157,12 @@ const ReviewProduct = () => {
         <Card className="p-4 flex items-center gap-4 shadow-soft border-border">
           <img
             src="https://images.unsplash.com/photo-1527169402691-a3d13e8d127b?w=400&h=400&fit=crop"
-            alt="Trà Sữa Phúc Long"
+            alt="Trà Sữa Aurum"
             className="w-20 h-20 rounded-xl object-cover"
           />
           <div className="flex-1">
             <h2 className="font-semibold text-lg text-card-foreground">
-              Trà Sữa Phúc Long
+              Trà Sữa Aurum
             </h2>
             <p className="text-sm text-muted-foreground">
               Size M · Đá: Vừa · Đường: 70%

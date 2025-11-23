@@ -32,9 +32,9 @@ const Settings = () => {
       items: [
         { label: "Trung tâm hỗ trợ", action: () => toast.info("Tính năng đang phát triển") },
         { label: "Tiêu chuẩn cộng đồng", action: () => toast.info("Tính năng đang phát triển") },
-        { label: "Điều khoản Phúc Long", action: () => toast.info("Tính năng đang phát triển") },
+        { label: "Điều khoản Aurum", action: () => toast.info("Tính năng đang phát triển") },
         { label: "Đánh giá ứng dụng", action: () => toast.success("Cảm ơn bạn đã ủng hộ 💚") },
-        { label: "Giới thiệu", action: () => toast.info("Phiên bản 1.0.0 - Phúc Long Coffee & Tea") },
+        { label: "Giới thiệu", action: () => toast.info("Phiên bản 1.0.0 - Aurum Coffee & Tea") },
         { label: "Yêu cầu hủy tài khoản", action: () => toast.warning("Liên hệ tổng đài hỗ trợ để hủy tài khoản.") },
       ],
     },

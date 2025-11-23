@@ -170,10 +170,10 @@ const Profile = () => {
         <div className="flex items-center gap-2">
           <img
             src="/images/logo_pl.png"
-            alt="Phúc Long Coffee & Tea"
+            alt="Aurum Coffee & Tea"
             className="w-10 h-10 object-contain bg-white rounded-full p-1 shadow-md"
           />
-          <span className="font-semibold text-lg text-white tracking-tight">Phúc Long</span>
+          <span className="font-semibold text-lg text-white tracking-tight">Aurum</span>
         </div>
         <div className="flex items-center gap-4">
           <ShoppingCart className="w-6 h-6" />

@@ -17,7 +17,7 @@ All colors MUST be HSL.
   --popover: 0 0% 100%;
   --popover-foreground: 270 8% 15%;
 
-  /* 🟢 Màu chủ đạo Phúc Long */
+  /* 🟢 Màu chủ đạo Aurum */
   --primary: 106 67% 25%;             /* #236513 */
   --primary-foreground: 0 0% 100%;
   --primary-light: 106 45% 35%;       /* xanh nhạt hơn một chút */
@@ -47,7 +47,7 @@ All colors MUST be HSL.
 
   --radius: 1rem;
 
-  /* 🌈 Premium gradients (theo tông xanh Phúc Long) */
+  /* 🌈 Premium gradients (theo tông xanh Aurum) */
   --gradient-primary: linear-gradient(135deg, hsl(106 67% 25%), hsl(106 45% 35%));
   --gradient-accent: linear-gradient(135deg, hsl(106 95% 58%), hsl(50 96% 65%));
   --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(120 20% 98%));

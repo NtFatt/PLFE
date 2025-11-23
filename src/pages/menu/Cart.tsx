@@ -46,7 +46,7 @@ export default function Cart() {
   }
 
   // ✅ Phí dịch vụ cố định (có thể đổi theo % hoặc động)
-  const serviceFee = 1000;
+  const serviceFee = 10000;
   const total = subtotal + serviceFee;
 
   return (

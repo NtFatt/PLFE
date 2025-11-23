@@ -7,6 +7,8 @@ export default function OrderSuccess() {
   const navigate = useNavigate();
   const location = useLocation();
   const { orderId, total } = location.state || {};
+  const formatVND = (value: number) =>
+    value.toLocaleString("vi-VN", { style: "currency", currency: "VND" });
 
   useEffect(() => {
     if (!orderId) {
@@ -27,7 +29,7 @@ export default function OrderSuccess() {
             Đặt hàng thành công!
           </h1>
           <p className="text-muted-foreground">
-            Cảm ơn bạn đã đặt hàng tại Phúc Long
+            Cảm ơn bạn đã đặt hàng tại Aurum
           </p>
         </div>
 
@@ -75,8 +77,9 @@ export default function OrderSuccess() {
                   Tổng thanh toán
                 </div>
                 <div className="text-xl font-bold text-primary">
-                  ${total?.toFixed(2) || '0.00'}
+                  {formatVND(total || 0)}
                 </div>
+
               </div>
             </div>
           </div>

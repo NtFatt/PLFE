@@ -24,12 +24,14 @@ export default function Checkout() {
     address: "",
     note: "",
   });
+  const formatVND = (value: number) =>
+    value.toLocaleString("vi-VN", { style: "currency", currency: "VND" });
 
   const [vouchers, setVouchers] = useState<Voucher[]>([]);
   const [selectedVoucher, setSelectedVoucher] = useState<Voucher | null>(null);
 
-  const serviceFee = 1.0;
-  const deliveryFee = pickupMethod === "delivery" ? 2.0 : 0;
+  const serviceFee = 10000;
+  const deliveryFee = pickupMethod === "delivery" ? 20000 : 0;
 
   // 🔹 Fetch voucher khả dụng
   useEffect(() => {
@@ -169,7 +171,7 @@ export default function Checkout() {
       setLoading(true);
       console.log("🛰️ [Checkout] Gửi đơn hàng:", orderPayload);
 
-const res = await orderService.create(orderPayload); // xoá token nếu không cần
+      const res = await orderService.create(orderPayload); // xoá token nếu không cần
       console.log("✅ [Checkout] Đặt hàng thành công:", res);
 
       clearCart();
@@ -257,7 +259,7 @@ const res = await orderService.create(orderPayload); // xoá token nếu không 
                   <Label htmlFor="delivery" className="flex-1 cursor-pointer">
                     <div className="font-semibold">Giao hàng tận nơi</div>
                     <div className="text-sm text-muted-foreground">
-                      Phí vận chuyển: $2.00 - Giao trong 30-45 phút
+                      Phí vận chuyển: 20.000₫ - Giao trong 30-45 phút
                     </div>
                   </Label>
                 </div>
@@ -408,37 +410,39 @@ const res = await orderService.create(orderPayload); // xoá token nếu không 
                     {item.name} × {item.quantity}
                   </span>
                   <span className="font-semibold">
-                    ${(item.price * item.quantity).toFixed(2)}
+                    {formatVND(item.price * item.quantity)}
                   </span>
+
                 </div>
               ))}
 
               <div className="border-t pt-3 mt-3">
                 <div className="flex justify-between text-sm mb-2">
                   <span className="text-muted-foreground">Tạm tính</span>
-                  <span className="font-semibold">${subtotal.toFixed(2)}</span>
+                  <span className="font-semibold">{formatVND(subtotal)}
+</span>
                 </div>
                 <div className="flex justify-between text-sm mb-2">
                   <span className="text-muted-foreground">Phí dịch vụ</span>
-                  <span className="font-semibold">+${serviceFee.toFixed(2)}</span>
+                  <span className="font-semibold">+{formatVND(serviceFee)}</span>
                 </div>
                 {deliveryFee > 0 && (
                   <div className="flex justify-between text-sm mb-2">
                     <span className="text-muted-foreground">Phí giao hàng</span>
                     <span className="font-semibold">
-                      +${deliveryFee.toFixed(2)}
+                      +{formatVND(deliveryFee)}
                     </span>
                   </div>
                 )}
                 {selectedVoucher && (
                   <div className="flex justify-between text-sm mb-2 text-green-600">
                     <span>Giảm giá ({selectedVoucher.code})</span>
-                    <span>- ${discountAmount.toFixed(2)}</span>
+                    <span>- {formatVND(discountAmount)}</span>
                   </div>
                 )}
                 <div className="flex justify-between text-xl font-bold pt-3 border-t">
                   <span>Tổng cộng</span>
-                  <span className="text-primary">${total.toFixed(2)}</span>
+                  <span className="text-primary">{formatVND(total)}</span>
                 </div>
               </div>
             </div>

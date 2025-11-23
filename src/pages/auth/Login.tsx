@@ -137,7 +137,7 @@ const Login = () => {
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-primary to-primary-glow mb-4">
             <Coffee className="w-8 h-8 text-primary-foreground" />
           </div>
-          <h1 className="text-3xl font-bold text-foreground">Phúc Long Coffee & Tea</h1>
+          <h1 className="text-3xl font-bold text-foreground">Aurum Coffee & Tea</h1>
           <p className="text-muted-foreground mt-2">Đăng nhập để tiếp tục</p>
         </div>
 

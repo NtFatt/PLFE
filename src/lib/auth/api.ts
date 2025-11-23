@@ -1,5 +1,5 @@
 // =============================================================
-// 🔐 Axios API Instance - Phúc Long App
+// 🔐 Axios API Instance - Aurum App
 // -------------------------------------------------------------
 // ✅ Tự động gắn Bearer token cho mỗi request
 // ✅ Tự động thử refresh token khi gặp 401 Unauthorized
